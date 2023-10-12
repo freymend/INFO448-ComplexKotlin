@@ -20,6 +20,19 @@ val fizzbuzz : (IntRange) -> String = {
         }
     }.fold("") { acc, s -> acc + s }
 }
+
+fun fizzbuzzGen(divisors: Map<Int, String>): (IntRange) -> String {
+    fun fizzbuzz(num: Int): String {
+        return divisors.map {
+            if (num % it.key == 0) it.value else ""
+        }.joinToString("")
+    }
+    return {
+        num -> num.map {
+            fizzbuzz(it)
+        }.fold("") { acc, s -> acc + s }
+    }
+}
 // Example usage
 /*
 if (fizzbuzz(0..1) == "")

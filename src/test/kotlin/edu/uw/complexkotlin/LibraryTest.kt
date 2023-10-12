@@ -22,6 +22,15 @@ class LibraryTest {
     @Test fun fizzbuzzToHundred() {
         assertEquals("FIZZBUZZFIZZDOHFIZZBUZZFIZZDOHFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZDOHFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZDOHBUZZFIZZFIZZBUZZDOHFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZDOHFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZDOHFIZZBUZZFIZZDOHFIZZBUZZ", fizzbuzz(1..100))
     }
+    @Test fun fizzbuzzGenOddToTwo() {
+        assertEquals("", fizzbuzzGen(mapOf(3 to "FIZZ", 5 to "BUZZ"))(1..2))
+    }
+    @Test fun fizzbuzzGenEvenToTwo() {
+        assertEquals("FIZZ", fizzbuzzGen(mapOf(2 to "FIZZ", 4 to "BUZZ"))(1..2))
+    }
+    @Test fun fizzbuzzGenWeird() {
+        assertEquals("Hello World!", fizzbuzzGen(mapOf(3 to "Hello ", 5 to "World!"))(1..5))
+    }
 
     @Test fun r1Test() {
         assertEquals(">>> FOO: {BAR}", r1())
