@@ -43,13 +43,13 @@ fun process(message: String, block: (String) -> String): String {
 }
 // Create r1 as a lambda that calls process() with message "FOO" 
 // and a block that returns "BAR"
-val r1 = { "" }
+val r1 = { process("FOO") { "BAR" } }
 
 // Create r2 as a lambda that calls process() with message "FOO" 
 // and a block that upper-cases r2_message, and repeats it three 
 // times with no spaces: "WOOGAWOOGAWOOGA"
 val r2_message = "wooga"
-val r2 = { "" }
+val r2 = { process("FOO") { r2_message.uppercase().repeat(3) } }
 
 
 // write an enum-based state machine between talking and thinking
