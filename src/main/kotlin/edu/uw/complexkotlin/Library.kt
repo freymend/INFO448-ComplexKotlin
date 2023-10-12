@@ -56,7 +56,7 @@ val r2 = { process("FOO") { r2_message.toUpperCase().repeat(3) } }
 enum class Philosopher {
     THINKING {
         override fun signal() = TALKING
-        override fun toString() = "Deep thoughts"
+        override fun toString() = "Deep thoughts...."
     },
     TALKING {
         override fun signal() = THINKING
