@@ -14,7 +14,8 @@ val fizzbuzz : (IntRange) -> String = {
         when {
             it % 15 == 0 -> "FIZZBUZZ"
             it % 3 == 0 -> "FIZZ"
-            it % 5 == 0-> "BUZZ"
+            it % 5 == 0 -> "BUZZ"
+            it % 7 == 0 -> "DOH"
             else -> ""
         }
     }.fold("") { acc, s -> acc + s }
