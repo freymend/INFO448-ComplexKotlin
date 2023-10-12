@@ -55,13 +55,13 @@ val r2 = { process("FOO") { r2_message.uppercase().repeat(3) } }
 // write an enum-based state machine between talking and thinking
 enum class Philosopher {
     THINKING {
-        override fun signal() = THINKING
-        override fun toString() = "Deep thoughts"
-    }
-    TALKING {
         override fun signal() = TALKING
+        override fun toString() = "Deep thoughts"
+    },
+    TALKING {
+        override fun signal() = THINKING
         override fun toString() = "Allow me to suggest an idea..."
-    }
+    };
     abstract fun signal(): Philosopher
 }
 
