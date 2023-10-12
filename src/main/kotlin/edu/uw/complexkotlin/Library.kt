@@ -11,10 +11,10 @@ package edu.uw.complexkotlin
 //
 val fizzbuzz : (IntRange) -> String = {
     range -> range.map {
-        when (number) {
-            number % 15 == 0 -> "FIZZBUZZ"
-            number % 3 == 0 -> "FIZZ"
-            number % 5 == 0 -> "BUZZ"
+        when {
+            it % 15 == 0 -> "FIZZBUZZ"
+            it % 3 == 0 -> "FIZZ"
+            it % 5 == 0-> "BUZZ"
             else -> ""
         }
     }.fold("") { acc, s -> acc + s }
@@ -49,7 +49,7 @@ val r1 = { process("FOO") { "BAR" } }
 // and a block that upper-cases r2_message, and repeats it three 
 // times with no spaces: "WOOGAWOOGAWOOGA"
 val r2_message = "wooga"
-val r2 = { process("FOO") { r2_message.uppercase().repeat(3) } }
+val r2 = { process("FOO") { r2_message.toUpperCase().repeat(3) } }
 
 
 // write an enum-based state machine between talking and thinking
