@@ -67,6 +67,9 @@ val r2 = { process("FOO") { r2_message.toUpperCase().repeat(3) } }
 
 
 // write an enum-based state machine between talking and thinking
+// Seneca the Younger aka Seneca is most associated with the school of philosophy stoicism.
+// Stoicism says virtuous behavior leads to good life because everything is rooted with nature
+// so living a life of virtue is living a life in harmony with nature thus leading to good life.
 enum class Philosopher {
     THINKING {
         override fun signal() = TALKING
